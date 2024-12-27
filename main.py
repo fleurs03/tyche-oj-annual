@@ -24,10 +24,10 @@ if __name__ == "__main__":
     for tid in tqdm(iterable=tids, desc="Tasks", leave=True):
        submissionList += get_submission_list(gid, tid, cookie)
     df = pd.DataFrame(submissionList)
-    df.to_csv("submission_list.csv", index=False)
+    df.to_csv("data/submission_list.csv", index=False)
     
     # load from csv
-    df = pd.read_csv("submission_list.csv")
+    df = pd.read_csv("data/submission_list.csv")
     submissionList = df.to_dict("records")
     
     totalSubmissions = len(submissionList)
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     
     pre_body = process_all(gname, endTimes, pid2tittle, len(tids), submissionList)
     
-    df = pd.read_csv("test_mailing_list.csv")
+    df = pd.read_csv("data/mailing_list.csv")
     mailing_list = df.to_dict("records")
     mailing_list = reorganize_mailing_list(mailing_list)
     for id, info in mailing_list.items():
