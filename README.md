@@ -23,7 +23,7 @@
 
    + 修改 `./main.py` 中的 `gid` 和 `cookie`。
    + 在 `./utils/mail_utils.py` 中填写以下内容：
-     + smpt_user` 和 `smpt_password`；
+     + `smpt_user` 和 `smpt_password`；
      + `sender_name` 和 `sender_email`；
      + 根据需要调整 `./utils/mail_utils.py` 中 `body`。
 
