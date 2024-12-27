@@ -25,7 +25,7 @@ subject = "Tyche OJ 年度报告 - {}"
 
 # 特别值得一提的是{{}}，你在这一天提交了{{}}次作业，显示出了非凡的专注与努力。纵观所有同学的提交记录，提交次数最多的前五名日期分别是{}、{}、{}、{}和{}，这些日期的提交量占到了总提交次数的{:.2f}%。
 
-# 以早上5:00为界，你最早的一次提交是{{}}，最晚的一次提交是{{}}。你的提交习惯显示，你偏好在{{}}点至{{}}点之间提交作业，在这个时间段内，你共提交了{{}}次。从整体来看，有{:.2f}%的提交发生在{}点至{}点，{:.2f}%的提交发生在{}点至{}点，{:.2f}%的提交发生在{}点至{}点。
+# 以早上5:00为界，你最早的一次提交是{{}}，最晚的一次提交是{{}}。你的提交习惯显示，你偏好在{{}}点至{{}}点之间提交作业，在这个时间段内，你共提交了{{}}次。从班级整体来看，有{:.2f}%的提交发生在{}点至{}点，{:.2f}%的提交发生在{}点至{}点，{:.2f}%的提交发生在{}点至{}点。
 
 # 值得注意的是，你有{{}}次作业是在截止日期当天完成的，而在截止时间的最后一小时内，你共有{{}}次提交。就全体同学来说，在截止日期当天，共有{}次提交，占总提交次数的{:.2f}%，在截止时间的最后一小时内，共有{}次提交，占总提交次数的{:.2f}%。希望在未来，大家能够更好地规划时间，避免临近截止日期的紧张冲刺。
 
@@ -53,7 +53,7 @@ body = """
     
     <p>特别值得一提的是<span style="color:FireBrick;">{{}}</span>，你在这一天提交了<span style="color:FireBrick;">{{}}</span>次作业，显示出了非凡的专注与努力。纵观所有同学的提交记录，提交次数最多的前五名日期分别是<span style="color:FireBrick;">{}</span>、<span style="color:FireBrick;">{}</span>、<span style="color:FireBrick;">{}</span>、<span style="color:FireBrick;">{}</span>和<span style="color:FireBrick;">{}</span>，这些日期的提交量占到了总提交次数的<span style="color:FireBrick;">{:.2f}%</span>。</p>
     
-    <p>以早上5:00为界，你最早的一次提交是<span style="color:FireBrick;">{{}}</span>，最晚的一次提交是<span style="color:FireBrick;">{{}}</span>。你的提交习惯显示，你偏好在<span style="color:FireBrick;">{{}}</span>点至<span style="color:FireBrick;">{{}}</span>点之间提交作业，在这个时间段内，你共提交了<span style="color:FireBrick;">{{}}</span>次。从整体来看，有<span style="color:FireBrick;">{:.2f}%</span>的提交发生在<span style="color:FireBrick;">{}</span>点至<span style="color:FireBrick;">{}</span>点，<span style="color:FireBrick;">{:.2f}%</span>的提交发生在<span style="color:FireBrick;">{}</span>点至<span style="color:FireBrick;">{}</span>点，<span style="color:FireBrick;">{:.2f}%</span>的提交发生在<span style="color:FireBrick;">{}</span>点至<span style="color:FireBrick;">{}</span>点。</p>
+    <p>以早上5:00为界，你最早的一次提交是<span style="color:FireBrick;">{{}}</span>，最晚的一次提交是<span style="color:FireBrick;">{{}}</span>。你的提交习惯显示，你偏好在<span style="color:FireBrick;">{{}}</span>点至<span style="color:FireBrick;">{{}}</span>点之间提交作业，在这个时间段内，你共提交了<span style="color:FireBrick;">{{}}</span>次。从班级整体来看，有<span style="color:FireBrick;">{:.2f}%</span>的提交发生在<span style="color:FireBrick;">{}</span>点至<span style="color:FireBrick;">{}</span>点，<span style="color:FireBrick;">{:.2f}%</span>的提交发生在<span style="color:FireBrick;">{}</span>点至<span style="color:FireBrick;">{}</span>点，<span style="color:FireBrick;">{:.2f}%</span>的提交发生在<span style="color:FireBrick;">{}</span>点至<span style="color:FireBrick;">{}</span>点。</p>
     
     <p>值得注意的是，你有<span style="color:FireBrick;">{{}}</span>次作业是在截止日期当天完成的，而在截止时间的最后一小时内，你共有<span style="color:FireBrick;">{{}}</span>次提交。就全体同学来说，在截止日期当天，共有<span style="color:FireBrick;">{}</span>次提交，占总提交次数的<span style="color:FireBrick;">{:.2f}%</span>，在截止时间的最后一小时内，共有<span style="color:FireBrick;">{}</span>次提交，占总提交次数的<span style="color:FireBrick;">{:.2f}%</span>。希望在未来，大家能够更好地规划时间，避免临近截止日期的紧张冲刺。</p>
     
