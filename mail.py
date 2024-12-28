@@ -2,6 +2,7 @@ import smtplib
 
 from email.mime.text import MIMEText
 from email.header import Header
+from email.utils import formatdate
 from utils.mail_utils import sender, smpt_server, smpt_port, smpt_user, smpt_password, subject
 
 def reorganize_mailing_list(mailing_list):
@@ -21,6 +22,7 @@ def send_mail(receiver_name, receiver_email, body):
     msg["From"] = Header(sender, "utf-8")
     msg["To"] = Header(receiver, "utf-8")
     msg["Subject"] = Header(subject.format(receiver_name), "utf-8")
+    msg["Date"] = formatdate(localtime=True)
 
     try:
         smtp = smtplib.SMTP_SSL(smpt_server, smpt_port)
