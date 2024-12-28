@@ -17,7 +17,7 @@ def reorganize_mailing_list(mailing_list):
 
 def send_mail(receiver_name, receiver_email, body):
     """send mail to a single receiver"""
-    receiver = f"{receiver_name} <{receiver_email}>"
+    # receiver = f"{receiver_name} <{receiver_email}>"
     msg = MIMEText(body, "html", "utf-8")
     msg["From"] = formataddr((sender_name, sender_email))
     msg["To"] = formataddr((receiver_name, receiver_email))
@@ -27,7 +27,7 @@ def send_mail(receiver_name, receiver_email, body):
     try:
         smtp = smtplib.SMTP_SSL(smpt_server, smpt_port)
         smtp.login(smpt_user, smpt_password)
-        smtp.sendmail(sender_email, receiver_email, msg.as_string())
+        smtp.sendmail(sender_email, [receiver_email], msg.as_string())
         print(f"Mail sent successfully to {receiver_name}")
     except smtplib.SMTPException as e:
         print(f"Error: Unable to send mail to {receiver_name}", e)
