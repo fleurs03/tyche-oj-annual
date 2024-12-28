@@ -8,7 +8,7 @@ smpt_password = ""
 
 sender_name = "sender"
 sender_email = "sender@mails.tsinghua.edu.cn"
-sender = f"{sender_name} <{sender_email}>"
+# sender = f"{sender_name} <{sender_email}>"
 
 # receiver_name = 'receiver'
 # receiver_email = 'receiver@mails.tsinghua.edu.cn'
