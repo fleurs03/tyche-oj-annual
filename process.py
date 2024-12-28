@@ -88,9 +88,9 @@ def process_individual(name, endTimes, pid2tittle, totalTasks, overallTotalSubmi
     pidCounts = dict()
     resultCounts = dict()
     lastHourCounts = 0
-    lastDayCounts = [False for _ in range(totalTasks)]
+    lastDayCounts = set()
     
-    submissions = sorted(submissions, key=lambda x: x["submitedTime"], reverse=True)
+    submissions = sorted(submissions, key=lambda x: x["submitedTime"], reverse=False)
     
     firstSubmission = submissions[0]["submitedTime"]
     firstSubmission = datetime.strptime(firstSubmission, time_format)
@@ -137,7 +137,7 @@ def process_individual(name, endTimes, pid2tittle, totalTasks, overallTotalSubmi
             # last hour count, take both 11:59 and 12:00 into consideration
             if endTime.minute > 0 and hour == endTime.hour or endTime.minute == 0 and hour == endTime.hour - 1:
                 lastHourCounts += 1
-            lastDayCounts[tid] = True
+            lastDayCounts.add(tid)
             
         pid = submission["pid"]
         if pid not in pidCounts:
@@ -162,7 +162,7 @@ def process_individual(name, endTimes, pid2tittle, totalTasks, overallTotalSubmi
         totalSubmissions, totalSubmissions/overallTotalSubmissions*100, result2str[resultCounts[0][0]], resultCounts[0][1], result2str[resultCounts[1][0]], resultCounts[1][1],
         dateCounts[0][0].strftime(date_format), dateCounts[0][1],
         earlistSubmission.astimezone(ZoneInfo("Asia/Shanghai")).strftime(datetime_format), latestSubmission.astimezone(ZoneInfo("Asia/Shanghai")).strftime(datetime_format), hourCounts[0][0], hourCounts[0][0]+1, hourCounts[0][1],
-        sum(lastDayCounts), lastHourCounts,
+        len(lastDayCounts), lastHourCounts,
         pid2tittle.get(pidCounts[0][0], "N/A"), pid2tittle.get(pidCounts[1][0], "N/A"), pid2tittle.get(pidCounts[2][0], "N/A"), pidCounts[0][1], pidCounts[1][1], pidCounts[2][1], sum(pidCounts[i][1] for i in range(3))/totalSubmissions*100
     )
     return body
