@@ -2,7 +2,7 @@ import smtplib
 
 from email.mime.text import MIMEText
 from email.header import Header
-from email.utils import formatdate
+from email.utils import formatdate, formataddr
 from utils.mail_utils import sender, smpt_server, smpt_port, smpt_user, smpt_password, subject
 
 def reorganize_mailing_list(mailing_list):
@@ -19,8 +19,8 @@ def send_mail(receiver_name, receiver_email, body):
     """send mail to a single receiver"""
     receiver = f"{receiver_name} <{receiver_email}>"
     msg = MIMEText(body, "html", "utf-8")
-    msg["From"] = Header(sender, "utf-8")
-    msg["To"] = Header(receiver, "utf-8")
+    msg["From"] = Header(formataddr((sender, sender)), "utf-8")
+    msg["To"] = formataddr((receiver_name, receiver_email))
     msg["Subject"] = Header(subject.format(receiver_name), "utf-8")
     msg["Date"] = formatdate(localtime=True)
 
