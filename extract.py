@@ -3,6 +3,7 @@ import pandas as pd
 def xls_columns_to_csv(xls_file, csv_file, columns):
     """convert Excel file to CSV file with specified columns"""
     data = pd.read_excel(xls_file, usecols=columns, engine="xlrd")
+    data = data.dropna()
     data.columns = ['Student No.', 'Name', 'Email']
     data.to_csv(csv_file, index=False)
 
