@@ -24,10 +24,10 @@ if __name__ == "__main__":
     for tid in tqdm(iterable=tids, desc="Tasks", leave=True):
        submissionList += get_submission_list(gid, tid, cookie)
     df = pd.DataFrame(submissionList)
-    df.to_csv("data/submission_list.csv", index=False)
+    df.to_csv(f"data/submission_list_{gid}.csv", index=False)
     
     # load from csv
-    df = pd.read_csv("data/submission_list.csv")
+    df = pd.read_csv(f"data/submission_list_{gid}.csv")
     submissionList = df.to_dict("records")
     
     totalSubmissions = len(submissionList)
