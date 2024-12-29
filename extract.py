@@ -8,13 +8,13 @@ def xls_columns_to_csv(xls_file, csv_file, columns):
 
 csv_file_path = "data/mailing_list.csv"
 
-is_Chinese = False
+is_Chinese = True
 
 if __name__ == "__main__":
     # download the Excel file from Web Learning
     if is_Chinese:
         xls_file_path = "data/学生信息.xls"
-        columns_to_extract = ["学号", "姓名", "邮箱"]
+        columns_to_extract = ["学号", "姓名", "电子邮件"]
     else:
         xls_file_path = "data/Students.xls"
         columns_to_extract = ["Student No.", "Name", "Email"]
